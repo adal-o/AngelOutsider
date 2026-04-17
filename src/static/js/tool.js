@@ -622,25 +622,31 @@
     const contentDiv = document.createElement('div');
     contentDiv.className = 'post-content';
 
+    const textCol = document.createElement('div');
+    textCol.className = 'post-text-col';
+    const imageCol = document.createElement('div');
+    imageCol.className = 'post-image-col';
+
     elements.forEach(el => {
       if (el.type === 'paragraph' && el.content.trim()) {
         const p = document.createElement('p');
         p.textContent = el.content;
-        contentDiv.appendChild(p);
+        textCol.appendChild(p);
       } else if (el.type === 'header' && el.content.trim()) {
         const h1 = document.createElement('h1');
-        h1.style.cssText = 'font-size:1.5rem;font-weight:300;margin-bottom:20px;';
         h1.textContent = el.content;
-        contentDiv.appendChild(h1);
+        textCol.appendChild(h1);
       } else if (el.type === 'image' && (el.imageData || el.content.trim())) {
         const img = document.createElement('img');
         img.src = el.imageData || el.content;
         img.alt = '';
         Object.assign(img.style, el.styles);
-        contentDiv.appendChild(img);
+        imageCol.appendChild(img);
       }
     });
 
+    contentDiv.appendChild(textCol);
+    contentDiv.appendChild(imageCol);
     article.appendChild(contentDiv);
     modalContent.appendChild(article);
     modalOverlay.style.display = 'flex';
