@@ -127,8 +127,8 @@ footer {
 }
 
 .draggable {
-    pointer-events: auto;  
-    width: 12%;
+    pointer-events: auto;
+    width: 5%;
     height: auto;
     position: absolute;
     top: 50%;
