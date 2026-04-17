@@ -1,88 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recent Posts</title>
-  <link rel="stylesheet" href="/Blog/static/css/blog-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Posts - ANGEL OUTSIDER</title>
+    <link rel="icon" href="/static/images/homepage/ajwStamp.ico">
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body>
-  
-<div class="blog-container">
-  <header class="blog-header">
-    <button class="hamburger-menu" id="hamburgerMenu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <h1 class="page-title">recent posts</h1>
-    
-    <nav class="dropdown-menu" id="dropdownMenu">
-      <ul>
-        <li><a href="/Blog/" class="nav-item">home</a></li>
-        <li><a href="/Blog/about">about</a></li>
-        <li><a href="/Blog/contact">contact</a></li>
-        <li><a href="#">X</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="posts-grid">
-    
-    <article class="post-card">
-      <a href="/Blog/posts/sample5/">
-        <div class="post-image">
-          <img src="../static/images/apple.png" alt="Untitled">
+<body class="body-blog">
+    <main class="main-content">
+        
+        <div class="overlay-text">
+            <a href="/home" class="nav-item nav-name">
+                <img src="/static/images/logo.png" alt="Your Name Logo" class="name-logo">
+            </a>
+            <div class="nav-links">
+                <a href="/about/" class="nav-item">about</a>
+                <a href="/blogs/" class="nav-item">read</a>
+                <a href="/contact/" class="nav-item">contact</a>
+            </div>
         </div>
-        <h2 class="post-title">Untitled</h2>
-      </a>
-    </article>
-    
-    <article class="post-card">
-      <a href="/Blog/posts/sample4/">
-        <div class="post-image">
-          <img src="../static/images/apple.png" alt="Untitled">
-        </div>
-        <h2 class="post-title">Untitled</h2>
-      </a>
-    </article>
-    
-    <article class="post-card">
-      <a href="/Blog/posts/sample2/">
-        <div class="post-image">
-          <img src="../static/images/homepage.png" alt="Weekend Adventures in the City">
-        </div>
-        <h2 class="post-title">Weekend Adventures in the City</h2>
-      </a>
-    </article>
-    
-    <article class="post-card">
-      <a href="/Blog/posts/sample1/">
-        <div class="post-image">
-          <img src="../static/images/homepage.png" alt="Weekend Adventures in the City">
-        </div>
-        <h2 class="post-title">Weekend Adventures in the City</h2>
-      </a>
-    </article>
-    
-  </div>
+        
+        
+<div class="scrolling-banner">
+    <div class="scrolling-track" id="scrollTrack">
+        <div class="scrolling-item">｡･:*:･ﾟ★,｡･:*:･ﾟ☆.⋆｡⋆☂˚｡⋆｡˚☽˚｡⋆.+*:ꔫ:*﹤｡･:*:･ﾟ★,｡･:*:･ﾟ☆✧༺♥༻∞｡･:*:･ﾟ★,｡･:*:･ﾟ☆.⋆｡⋆☂˚｡⋆｡˚☽˚｡⋆.+*:ꔫ:*﹤｡･:*:･ﾟ★,｡･:*:･ﾟ☆✧༺♥༻∞｡･:*:･ﾟ★,｡･:*:･ﾟ☆.⋆｡⋆☂˚｡⋆｡˚☽˚｡⋆.+*:ꔫ:*﹤｡･:*:･ﾟ★,｡･:*:･ﾟ☆✧༺♥༻∞｡･:*:･ﾟ★,｡･:*:･ﾟ☆.⋆｡⋆☂˚｡⋆｡˚☽˚｡⋆.+*:ꔫ:*﹤｡･:*:･ﾟ★,｡･:*:･ﾟ☆✧༺♥༻∞｡･:*:･ﾟ★,｡･:*:･ﾟ☆</div>
+    </div>
 </div>
 
-<script>
-  const hamburger = document.getElementById('hamburgerMenu');
-  const dropdown = document.getElementById('dropdownMenu');
+<div class="posts-grid">
   
-  hamburger.addEventListener('click', () => {
-    dropdown.classList.toggle('active');
-    hamburger.classList.toggle('active');
-  });
+  <article class="post-card">
+    <a href="/posts/sample2/">
+      <div class="post-image">
+        <img src="../static/images/homepage.png" alt="Weekend Adventures in the City">
+      </div>
+      <h2 class="post-title">Weekend Adventures in the City</h2>
+    </a>
+  </article>
   
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
-      dropdown.classList.remove('active');
-      hamburger.classList.remove('active');
-    }
-  });
-</script>
+  <article class="post-card">
+    <a href="/posts/sample1/">
+      <div class="post-image">
+        <img src="../static/images/homepage.png" alt="Weekend Adventures in the City">
+      </div>
+      <h2 class="post-title">Weekend Adventures in the City</h2>
+    </a>
+  </article>
+  
+  <article class="post-card">
+    <a href="/posts/marble/">
+      <div class="post-image">
+        <img src="../static/images/The_Earth_seen_from_Apollo_17.jpg" alt="marble">
+      </div>
+      <h2 class="post-title">marble</h2>
+    </a>
+  </article>
+  
+</div>
+
+    </main>
+
+    <footer>
+        subscribe
+    </footer>
+
+    
+    <script src="/static/js/script.js"></script>
+    
 </body>
 </html>

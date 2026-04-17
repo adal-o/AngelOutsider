@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEPTHS OF OUR MIND</title>
-    <link rel="icon" href="/Blog/static/images/homepage/ajwStamp.ico">
-    <link rel="stylesheet" href="/Blog/static/css/navbar.css">
-    <link rel="stylesheet" href="/Blog/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body class="body-home">
-    <main class="main-content">
-        
-        <div class="overlay-text">
-            <div class="nav-links">
-                <a href="/Blog/blogs/" class="nav-item">read</a>
-                <a href="/Blog/about/" class="nav-item">about</a>
-                <a href="/Blog/contact/" class="nav-item">contact</a>
-            </div>
-        </div>
-        
-        
-<div class="scrolling-banner">
-    <div class="scrolling-track" id="scrollTrack">
-        <div class="scrolling-item">｡･:*:･ﾟ★,｡･:*:･ﾟ☆.⋆｡⋆☂˚｡⋆｡˚☽˚｡⋆.+*:ꔫ:*﹤｡･:*:･ﾟ★,｡･:*:･ﾟ☆✧༺♥༻∞｡･:*:･ﾟ★,｡･:*:･ﾟ☆.⋆｡⋆☂˚｡⋆｡˚☽˚｡⋆.+*:ꔫ:*﹤｡･:*:･ﾟ★,｡･:*:･ﾟ☆✧༺♥༻∞｡･:*:･ﾟ★,｡･:*:･ﾟ☆.⋆｡⋆☂˚｡⋆｡˚☽˚｡⋆.+*:ꔫ:*﹤｡･:*:･ﾟ★,｡･:*:･ﾟ☆✧༺♥༻∞｡･:*:･ﾟ★,｡･:*:･ﾟ☆.⋆｡⋆☂˚｡⋆｡˚☽˚｡⋆.+*:ꔫ:*﹤｡･:*:･ﾟ★,｡･:*:･ﾟ☆✧༺♥༻∞｡･:*:･ﾟ★,｡･:*:･ﾟ☆</div>
-    </div>
-</div>
 
-<div class='main-text'>
-    GIRL ON DISPLAY
-</div>
-    </main>
-
-    
+<body class='landing'>
 </body>
-</html>
+
+<script>
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Define an array of image URLs
+    const images = [
+        "/static/images/landing/2.png",
+        "/static/images/landing/3.png",
+        "/static/images/landing/4.png",
+        "/static/images/landing/5.png",
+        "/static/images/landing/Artboard 1@4x.png",
+        "/static/images/landing/Untitled-1.png",
+    ];
+
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const selectedImage = images[randomIndex];
+
+    document.body.style.backgroundImage = `url('${selectedImage}')`;
+
+});
+
+document.addEventListener('click', function(event) {
+    window.location.href = "/home";
+});
+
+</script>
