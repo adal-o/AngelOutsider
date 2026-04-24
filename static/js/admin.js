@@ -15,27 +15,9 @@
   const postsList = document.getElementById('postsList');
   const postsError = document.getElementById('postsError');
 
-  const PAT_KEY = 'awu_admin_pat';
-  const PAT_TTL = 25 * 60 * 1000;
-
-  function savePat(pat) {
-    localStorage.setItem(PAT_KEY, JSON.stringify({ pat, expiry: Date.now() + PAT_TTL }));
-  }
-
-  function loadPat() {
-    try {
-      const stored = JSON.parse(localStorage.getItem(PAT_KEY));
-      if (stored && stored.expiry > Date.now()) return stored.pat;
-    } catch (_) {}
-    localStorage.removeItem(PAT_KEY);
-    return null;
-  }
-
-  function clearPat() {
-    localStorage.removeItem(PAT_KEY);
-  }
-
-  function getPat() { return loadPat() || ''; }
+  function getPat() { return localStorage.getItem('gh_pat') || ''; }
+  function savePat(pat) { localStorage.setItem('gh_pat', pat); }
+  function clearPat() { localStorage.removeItem('gh_pat'); }
 
   function ghHeaders(extra = {}) {
     return {
@@ -129,7 +111,8 @@
       const res = await fetch(file.url, { headers: ghHeaders() });
       const data = await res.json();
       sha = data.sha;
-      const raw = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
+      const bytes = Uint8Array.from(atob(data.content.replace(/\n/g, '')), c => c.charCodeAt(0));
+      const raw = new TextDecoder().decode(bytes);
       const titleMatch = raw.match(/^title:\s*"?([^"\n]+)"?/m);
       const dateMatch = raw.match(/^datePosted:\s*(.+)/m);
       if (titleMatch) title = titleMatch[1].trim();
@@ -188,7 +171,7 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  if (loadPat()) {
+  if (getPat()) {
     showMain();
   } else {
     showAuth();
