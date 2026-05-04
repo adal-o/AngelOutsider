@@ -20,9 +20,8 @@ body {
     background-color: var(--background-color);
     min-height: 100vh;
     margin: 0;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    align-items: end;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-container {
@@ -222,7 +221,30 @@ footer {
   }
 
   .post-header {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 130px;
+  }
+
+  .back-button {
+    position: relative;
+    left: 0;
+    top: auto;
+    transform: none;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+  }
+
+  .back-button:hover {
+    transform: translateX(-4px);
+  }
+}
+
+@media (max-width: 480px) {
+  .post-header {
+    margin-top: 110px;
   }
 }
